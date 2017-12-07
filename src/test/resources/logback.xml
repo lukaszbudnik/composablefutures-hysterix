@@ -1,0 +1,19 @@
+<configuration>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%date{ISO8601} %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="STDOUT_WITH_MDC" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%date{ISO8601} [B:%X{blogName}] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="com.github.lukaszbudnik" level="DEBUG">
+		<appender-ref ref="STDOUT_WITH_MDC" />
+	</logger>
+
+</configuration>
